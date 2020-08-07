@@ -12,11 +12,11 @@ def extract_html():
 
 
 def get_text_link_from_html(html):
-    requests = html.find(SEL)
+    results = html.find(SEL)
     content_list = []
     try:
-        for request in requests:
-            title = request.text
+        for result in results:
+            title = result.text
             link = list(result.absolute_links)[0]
             content_list.append((title, link))
         return content_list
